@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talha Mushtaque - Marketing Automation Specialist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid white;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: white;
+            color: #667eea;
+        }
+        
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 15px 0;
+        }
+        
+        nav a {
+            color: #333;
+            text-decoration: none;
+            padding: 10px 25px;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #667eea;
+        }
+        
+        /* Sections */
+        section {
+            background: white;
+            margin: 40px auto;
+            padding: 60px 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 100px;
+            color: white;
+            margin: 0 auto;
+        }
+        
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .skill-category {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+        }
+        
+        .skill-category li {
+            padding: 5px 0;
+            color: #555;
+        }
+        
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .project-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .project-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .tag {
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+        
+        .project-metrics {
+            background: white;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #28a745;
+        }
+        
+        /* Experience */
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+            margin-top: 40px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #667eea;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -37px;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #667eea;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #667eea;
+        }
+        
+        .timeline-item h3 {
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-item .company {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .timeline-item .date {
+            color: #888;
+            font-style: italic;
+        }
+        
+        .timeline-item ul {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+        
+        .timeline-item li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        /* Certifications */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .cert-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .cert-card h3 {
+            margin-bottom: 10px;
+        }
+        
+        .cert-card .issuer {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        
+        /* Contact */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        
+        .contact-item {
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .contact-item h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .contact-item a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-item a:hover {
+            color: #667eea;
+        }
+        
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Talha Mushtaque</h1>
+            <p>Marketing Automation Specialist | Software Engineer</p>
+            <p>Building AI-Powered Marketing Solutions at Adobe</p>
+            <div class="social-links">
+                <a href="mailto:coder.talha1998@gmail.com">Email</a>
+                <a href="https://linkedin.com/in/talha-mushtaque-323111128" target="_blank">LinkedIn</a>
+                <a href="https://github.com/talhathecoder" target="_blank">GitHub</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="profile-image">TM</div>
+                <div>
+                    <p style="font-size: 1.1em; line-height: 1.8;">
+                        Marketing Automation Specialist with 5+ years of experience building scalable marketing automation solutions and integrating enterprise platforms. Currently at Adobe, I specialize in Marketo Engage and Adobe Journey Optimizer, architecting custom solutions for Fortune 500 clients.
+                    </p>
+                    <p style="font-size: 1.1em; line-height: 1.8; margin-top: 20px;">
+                        My unique background combines software engineering with marketing technology expertise. I've architected 60+ custom automation solutions, integrated platforms handling 2M+ daily API calls, and optimized databases with 10M+ records—all while delivering measurable business impact: 32% conversion improvements, 99.9% system reliability, and 92% email deliverability rates.
+                    </p>
+                    <p style="font-size: 1.1em; line-height: 1.8; margin-top: 20px;">
+                        I'm passionate about leveraging AI and machine learning to enhance marketing automation effectiveness, building predictive lead scoring models, and creating intelligent workflows that drive pipeline growth.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Marketing Automation</h3>
+                    <ul>
+                        <li>Adobe Marketo Engage (Expert)</li>
+                        <li>Adobe Journey Optimizer (AJO)</li>
+                        <li>Adobe Experience Platform (AEP)</li>
+                        <li>Salesforce CRM</li>
+                        <li>MS Dynamics 365</li>
+                        <li>Lead Scoring & Nurturing</li>
+                        <li>Campaign Architecture</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Programming & Development</h3>
+                    <ul>
+                        <li>Java, JavaScript, Python</li>
+                        <li>SQL (Advanced)</li>
+                        <li>HTML/CSS</li>
+                        <li>REST APIs & Webhooks</li>
+                        <li>OAuth 2.0</li>
+                        <li>Velocity Scripting</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>AI & Automation</h3>
+                    <ul>
+                        <li>AI-Powered Lead Scoring</li>
+                        <li>Predictive Analytics</li>
+                        <li>LLM API Integration</li>
+                        <li>Prompt Engineering</li>
+                        <li>Workflow Automation</li>
+                        <li>ML for Customer Behavior</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Cloud & Tools</h3>
+                    <ul>
+                        <li>AWS Cloud Platform</li>
+                        <li>MySQL, PostgreSQL</li>
+                        <li>Git & CI/CD</li>
+                        <li>Postman, JIRA</li>
+                        <li>Database Optimization</li>
+                        <li>API Testing</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="projects">
+            <h2>Key Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Enterprise Lead Scoring Engine</h3>
+                    <p>Designed and implemented sophisticated predictive lead scoring algorithm incorporating 50+ behavioral signals and demographic data for Fortune 500 enterprise.</p>
+                    <div class="project-metrics">
+                        ✓ 32% increase in MQL-to-SQL conversion<br>
+                        ✓ 25% reduction in sales cycle<br>
+                        ✓ Improved lead quality by 45%
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Marketo</span>
+                        <span class="tag">Salesforce</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Predictive Analytics</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Multi-Cloud API Integration Framework</h3>
+                    <p>Built scalable API integration framework connecting Marketo with 15+ external platforms using REST APIs, webhooks, and OAuth 2.0 authentication.</p>
+                    <div class="project-metrics">
+                        ✓ 2M+ daily API calls processed<br>
+                        ✓ 99.9% uptime reliability<br>
+                        ✓ Real-time data synchronization
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">REST APIs</span>
+                        <span class="tag">OAuth 2.0</span>
+                        <span class="tag">Webhooks</span>
+                        <span class="tag">Microservices</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Email Deliverability Optimization System</h3>
+                    <p>Engineered comprehensive email authentication framework and deliverability monitoring system implementing SPF, DKIM, DMARC protocols.</p>
+                    <div class="project-metrics">
+                        ✓ Inbox placement: 68% → 92%<br>
+                        ✓ Bounce rate reduced by 45%<br>
+                        ✓ Open rates improved by 24%
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Email Authentication</span>
+                        <span class="tag">SPF/DKIM/DMARC</span>
+                        <span class="tag">Analytics</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Database Performance Optimization</h3>
+                    <p>Optimized marketing databases containing 10M+ records using advanced SQL queries, indexing strategies, and data partitioning techniques.</p>
+                    <div class="project-metrics">
+                        ✓ Query execution time reduced by 65%<br>
+                        ✓ Campaign processing faster by 40%<br>
+                        ✓ Reduced infrastructure costs
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">SQL</span>
+                        <span class="tag">Database Optimization</span>
+                        <span class="tag">Performance Tuning</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <h3>AI-Assisted Campaign Intelligence</h3>
+                    <p>Built automated campaign analysis system using LLM APIs to generate performance insights and optimization recommendations from marketing data.</p>
+                    <div class="project-metrics">
+                        ✓ Manual analysis time reduced by 60%<br>
+                        ✓ Automated insight generation<br>
+                        ✓ Real-time recommendations
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">OpenAI API</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">LLM Integration</span>
+                        <span class="tag">AI</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Custom Object Architecture</h3>
+                    <p>Designed sophisticated custom object data model in Marketo for multi-product attribution enabling advanced lead relationship management across 12+ product lines.</p>
+                    <div class="project-metrics">
+                        ✓ 360° customer view achieved<br>
+                        ✓ Attribution accuracy improved<br>
+                        ✓ Sales visibility increased 25%
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Marketo</span>
+                        <span class="tag">Data Modeling</span>
+                        <span class="tag">Architecture</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Marketing Automation Specialist</h3>
+                    <p class="company">Adobe | Noida, India</p>
+                    <p class="date">February 2024 - Present</p>
+                    <ul>
+                        <li>Architected 60+ custom marketing automation solutions for Fortune 500 enterprises</li>
+                        <li>Integrated Marketo with external platforms handling 2M+ daily API calls with 99.9% uptime</li>
+                        <li>Optimized databases with 10M+ records reducing query execution time by 65%</li>
+                        <li>Achieved 92% email deliverability and 24% improvement in open rates</li>
+                        <li>Mentored junior engineers and authored 50+ technical documentation articles</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>Senior Operations Specialist</h3>
+                    <p class="company">Concentrix (Comcast Xfinity) | Gurugram, India</p>
+                    <p class="date">January 2023 - February 2024</p>
+                    <ul>
+                        <li>Managed marketing operations for Fortune 50 enterprise with multi-million user scale</li>
+                        <li>Built SQL-based analytics dashboards reducing data processing time by 35%</li>
+                        <li>Improved customer satisfaction by 18% through data-driven optimization</li>
+                        <li>Executed customer journey tracking with behavioral scoring models</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>Software Development Engineer</h3>
+                    <p class="company">Remits (FinTech Startup) | Delhi, India</p>
+                    <p class="date">December 2020 - December 2022</p>
+                    <ul>
+                        <li>Developed RESTful APIs using Python and JavaScript handling 50K+ daily transactions</li>
+                        <li>Implemented OAuth 2.0 authentication ensuring PCI-DSS compliance</li>
+                        <li>Built CI/CD pipelines enabling zero-downtime deployments to AWS</li>
+                        <li>Optimized database schemas reducing load by 40%</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="certifications">
+            <h2>Certifications & Education</h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <h3>Adobe Certified Expert</h3>
+                    <p class="issuer">Marketo Engage Business Practitioner</p>
+                    <p>Adobe | 2025</p>
+                </div>
+                
+                <div class="cert-card">
+                    <h3>Bachelor of Technology</h3>
+                    <p class="issuer">Computer Science & Engineering</p>
+                    <p>Aliah University | 2021</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>Email</h3>
+                    <a href="mailto:coder.talha1998@gmail.com">coder.talha1998@gmail.com</a>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>Phone</h3>
+                    <a href="tel:+918240960387">+91-8240960387</a>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>LinkedIn</h3>
+                    <a href="https://linkedin.com/in/talha-mushtaque-323111128" target="_blank">Connect on LinkedIn</a>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/talhathecoder" target="_blank">View My Code</a>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Talha Mushtaque. All rights reserved.</p>
+            <p>Marketing Automation Specialist | Software Engineer | AI Enthusiast</p>
+        </div>
+    </footer>
+</body>
+</html>
